@@ -2,6 +2,8 @@ import { businessHTML } from "./Business.js"
 import { useBusinesses } from "./BusinessProvider.js"
 import { newYorkBusinesses } from "./BusinessProvider.js"
 import { manufacturingBusinesses } from "./BusinessProvider.js"
+import { purchasingAgents } from "./BusinessProvider.js"
+import { agentHTML } from "./Business.js"
 
 export const businessList = () => {
   const contentTarget = document.querySelector(".businesses")
@@ -30,5 +32,15 @@ export const manufacturingBusinessList = () => {
 
   manufacturingArray.forEach((businessObject) => {
     contentTarget.innerHTML += businessHTML(businessObject)
+  })
+}
+
+export const agentsList = () => {
+  const contentTarget = document.querySelector(".agents")
+  const agentsArray = purchasingAgents
+  contentTarget.innerHTML = "<h1>Purchasing Agents</h1>"
+
+  agentsArray.forEach((agentObject) => {
+    contentTarget.innerHTML += agentHTML(agentObject)
   })
 }

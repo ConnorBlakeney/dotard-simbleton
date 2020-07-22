@@ -113,18 +113,18 @@ const businesses = [
 
 export const useBusinesses = () => businesses.slice()
 
-export const newYorkBusinesses = useBusinesses().filter((businessObject) => {
-  if (businessObject.addressStateCode === "NY") {
-    return true
-  }
-  return false
-})
+export const newYorkBusinesses = useBusinesses().filter(
+  (businessObject) => businessObject.addressStateCode === "NY"
+)
 
 export const manufacturingBusinesses = useBusinesses().filter(
-  (businessObject) => {
-    if (businessObject.companyIndustry === "Manufacturing") {
-      return true
-    }
-    return false
-  }
+  (businessObject) => businessObject.companyIndustry === "Manufacturing"
 )
+
+export const purchasingAgents = businesses.map((agentObj) => {
+  return {
+    fullName: `${agentObj.purchasingAgent.nameFirst} ${agentObj.purchasingAgent.nameLast}`,
+    company: agentObj.companyName,
+    phoneNumber: agentObj.phoneWork,
+  }
+})
