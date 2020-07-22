@@ -1,3 +1,7 @@
 import { businessList } from "./BusinessList.js"
+import { newYorkBusinessList } from "./BusinessList.js"
+import { manufacturingBusinessList } from "./BusinessList.js"
 
-console.log(businessList())
+businessList()
+newYorkBusinessList()
+manufacturingBusinessList()
